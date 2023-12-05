@@ -1,0 +1,96 @@
+<h1>Form di registrazione "Reactive"</h1>
+<form>
+  <div>
+    <label for="name" class="form-label">Name:</label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      class="form-control"
+      [formControl]="name"
+    />
+  </div>
+  <div>
+    <label for="surname" class="form-label">Surname:</label>
+    <input
+      type="text"
+      name="surname"
+      id="surname"
+      class="form-control"
+      [formControl]="surname"
+    />
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div>
+        <label for="password" class="form-label">password:</label>
+        <input
+          type="text"
+          name="password"
+          id="password"
+          class="form-control"
+          [formControl]="password"
+        />
+      </div>
+      <div>
+        <label for="password2" class="form-label">Confirm password</label>
+        <input
+          type="text"
+          name="password2"
+          id="password2"
+          class="form-control"
+        />
+      </div>
+      <label for="gender">Gender</label>
+      <select
+        name="gender"
+        id="gender"
+        class="form-select"
+        [formControl]="gender"
+      >
+        <option value=""></option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <label for="username">Username</label>
+      <input
+        type="text"
+        for="username"
+        id="username"
+        class="form-control"
+        [formControl]="username"
+      />
+    </div>
+    <div class="col-6 d-flex justify-content-center">
+      <div class="mt-3">
+        <label for="profile-picture" class="form-label border-bottom"
+          ><i class="bi bi-camera fs-3"
+            >Click here to nsert profile picture</i
+          ></label
+        >
+        <input
+          name="profile-picture"
+          class="form-control d-none"
+          type="file"
+          id="profile-picture"
+          [formControl]="picture"
+        />
+        <div>
+          <label for="bio" class="form-label mt-3">About you</label>
+          <div>
+            <textarea
+              name="bio"
+              id="bio"
+              cols="50"
+              rows="5"
+              [formControl]="bio"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-outline-success mt-3 w-100" (click)="subscribe()">
+    Submit
+  </button>
+</form>
